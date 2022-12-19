@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #002947;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  padding: 10px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .btn {
+      margin-right: 20px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+      margin-right: 15px;
+    }
+  }
+  .time {
+    background: #024b5c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+// battle
+.battle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 19px 0;
+
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+  }
+  .vs {
+    width: 17px;
+    height: 17px;
+    font-size: 8px;
+    background: #024b5c;
+    padding: 4px;
+    border-radius: 50%;
+    margin: 0 32px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      background: #024b5c;
+      height: 1px;
+      width: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}
+// team players
+.match {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  .players {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .player-card {
+      position: relative;
+      background: #002947;
+      border-radius: 3px;
+      height: 53px;
+      width: 14%;
+      max-width: 46px;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .i-logo {
+        background: #fff;
+        position: absolute;
+        left: 5px;
+        bottom: 2px;
+        width: 10px;
+      }
+      .undecide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #00b1db;
+        padding: 6px;
+        border-radius: 50%;
+      }
+
+      &.ply {
+        > img.player-image {
+          width: auto;
+          height: 100%;
+        }
+      }
+    }
+    .unknown {
+      background: #fff;
+      height: 53px;
+      width: 46px;
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 2px;
+        left: 2px;
+        border: 2px solid #00b1db;
+        border-radius: 3px;
+        width: 42px;
+        height: 48px;
+      }
+    }
+    .ply {
+      background: #fff;
+    }
+  }
+  .player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0 8px 0;
+    padding: 0 10px;
+    .play {
+      background: #024b5c;
+      padding: 5px 10px;
+      font-weight: 300;
+      border-radius: 5px;
+      font-size: 12px;
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .txt {
+        margin: 0 10px;
+        font-size: 12px;
+      }
+      .name-logo {
+        background: #82abfa;
+        border: 1px solid #3d65b2;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.own-team {
+  .player-info {
+    margin-top: 0;
+  }
+}
+// selection
+.selection {
+  padding: 50px;
+  background: #2a711f center/cover url("../assets/match/ground.png") no-repeat;
+  position: relative;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .choice {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 12px;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    text-align: center;
+  }
+}
+footer {
+  display: flex;
+  margin: 27px 0;
+  flex-direction: column;
+  align-items: flex-end;
+  button {
+    background: #e47c29;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 4px;
+    width: 55%;
+    max-width: 173px;
+    font-size: 18px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .match {
+    .players {
+      gap: 4px;
+    }
+  }
+}

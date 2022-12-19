@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #002947;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  padding: 10px;
+  max-width: 100%;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .btn {
+      margin-right: 20px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+      margin-right: 15px;
+    }
+  }
+  .time {
+    background: #024b5c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+  .live {
+    background: #ff4848;
+    padding: 5px;
+    padding-left: 20px;
+    border-radius: 4px;
+    position: relative;
+    width: 56px;
+    height: 23px;
+    font-size: 12px;
+
+    &::after {
+      position: absolute;
+      content: "";
+      background: #fff;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      top: 50%;
+      left: 6px;
+      transform: translateY(-50%);
+    }
+  }
+}
+// battle
+.battle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 19px 0;
+
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+  }
+  .vs {
+    width: 17px;
+    height: 17px;
+    font-size: 8px;
+    background: #024b5c;
+    padding: 4px;
+    border-radius: 50%;
+    margin: 0 32px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      background: #024b5c;
+      height: 1px;
+      width: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}
+// team players
+.match {
+  background: #024b5c;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  .player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .play {
+      background: #012c36;
+      text-align: center;
+      font-weight: 400;
+      padding: 9px 5px;
+      border-radius: 5px;
+      min-width: 102px;
+      margin: 0 10px;
+
+      .dash {
+        margin: 0 8px;
+      }
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      .txt {
+        font-size: 13px;
+        text-align: right;
+        max-width: 60px;
+      }
+      .txt-your {
+        text-align: left;
+      }
+      .name-logo {
+        background: #82abfa;
+        border: 1px solid #3d65b2;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
+// card
+.card-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  position: relative;
+  margin: 0 20px;
+
+  &::after {
+    position: absolute;
+    content: "";
+    background: rgba(255, 255, 255, 0.15);
+    width: 1px;
+    height: 367px;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .cardlist {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+
+      .plyer-info > p {
+        font-size: 10px;
+      }
+      .img {
+        background: #fff;
+        border-radius: 5px;
+        position: relative;
+        width: 46px;
+        height: 53px;
+        overflow: hidden;
+
+        .i-logo {
+          background: #fff;
+          position: absolute;
+          left: 4px;
+          bottom: 4px;
+          width: 10px;
+        }
+      }
+
+      .type {
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 14px;
+        font-size: 8px;
+        padding: 2px 0px;
+        text-align: center;
+        margin-top: 5px;
+        color: #fff;
+        width: 50px;
+      }
+      .score {
+        color: #00b1db;
+        font-weight: 700;
+        margin-left: 8px;
+      }
+    }
+  }
+  //second list
+  .cardlist2 {
+    .card {
+      .plyer-info {
+        & > p {
+          text-align: right;
+        }
+        .type {
+          text-align: center;
+        }
+      }
+      .score-right {
+        margin-left: 0;
+        margin-right: 8px;
+      }
+    }
+  }
+}
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin: 27px 20px;
+  button {
+    background: #e47c29;
+    width: 46%;
+    outline: none;
+    border: none;
+    color: #fff;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 18px;
+  }
+}
+@media only screen and (max-width: 406px) {
+  .card-item {
+    margin: 0 10px;
+  }
+  footer {
+    margin: 27px 10px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .card-item {
+    gap: 0;
+    .cardlist {
+      .card {
+        gap: 2px;
+        .plyer-info > p {
+          font-size: 12px;
+        }
+        .type {
+          font-size: 8px;
+        }
+      }
+    }
+  }
+}

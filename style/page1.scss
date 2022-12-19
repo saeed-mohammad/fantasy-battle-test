@@ -1,0 +1,273 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #002947;
+  font-family: "Archivo", sans-serif;
+  color: white;
+  padding: 10px;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .header-left {
+    display: flex;
+    align-items: center;
+
+    .btn {
+      margin-right: 20px;
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .btn {
+      margin-right: 15px;
+    }
+  }
+  .time {
+    background: #024b5c;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: 300;
+    font-size: 12px;
+  }
+}
+// battle
+.battle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 19px 0;
+
+  .team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60px;
+  }
+  .vs {
+    width: 17px;
+    height: 17px;
+    font-size: 8px;
+    background: #024b5c;
+    padding: 4px;
+    border-radius: 50%;
+    margin: 0 32px;
+    position: relative;
+
+    &:after {
+      position: absolute;
+      content: "";
+      background: #024b5c;
+      height: 1px;
+      width: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: -1;
+    }
+  }
+}
+// team players
+.match {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+  .players {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .player-card {
+      position: relative;
+      background: #002947;
+      border-radius: 3px;
+      height: 53px;
+      width: 14%;
+      max-width: 46px;
+      overflow: hidden;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .i-logo {
+        background: #fff;
+        position: absolute;
+        left: 4px;
+        bottom: 4px;
+        width: 10px;
+      }
+    }
+    .ply {
+      background: #fff;
+      > img.player-image {
+        width: auto;
+        height: 100%;
+      }
+    }
+  }
+  .player-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 16px 0 8px 0;
+    padding: 0 10px;
+
+    .play {
+      background: #024b5c;
+      padding: 5px 10px;
+      border-radius: 5px;
+      font-size: 12px;
+      font-weight: 400;
+
+      span {
+        font-size: 22px;
+      }
+    }
+    .name {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .txt {
+        margin: 0 10px;
+        font-size: 12px;
+      }
+      .name-logo {
+        background: #82abfa;
+        border: 1px solid #3d65b2;
+        width: 26px;
+        height: 26px;
+        border-radius: 50%;
+        padding: 5px 0;
+        text-align: center;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.own-team {
+  .player-info {
+    margin-top: 0;
+  }
+}
+// selection
+.selection {
+  padding: 10px;
+  background: #2a711f center/cover url("../assets/match/ground.png") no-repeat;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .choice {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .selection-time {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .pitch {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      image {
+        height: 200px;
+      }
+    }
+    .option {
+      z-index: 2;
+      background: #fff;
+      position: relative;
+      color: #002947;
+      padding: 10px;
+      border-radius: 5px;
+      box-shadow: 3px 6px 10px rgb(0 0 0 / 50%);
+      width: 104px;
+
+      .i-logo {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 10px;
+      }
+      .option-img {
+        width: 100%;
+        height: auto;
+      }
+
+      span {
+        position: absolute;
+        left: 8px;
+        bottom: 8px;
+        font-size: 12px;
+        background: linear-gradient(to top, #fff, transparent);
+        width: calc(100% + -10px);
+
+        p {
+          text-align: start;
+        }
+        .last {
+          font-weight: 700;
+        }
+        .des {
+          background: #024b5c;
+          border-radius: 10px;
+          padding: 3px 15px;
+          text-align: center;
+          font-weight: 300;
+          color: #fff;
+          display: inline-block;
+        }
+      }
+    }
+  }
+  .time-count {
+    margin: 0 15px;
+    z-index: 2;
+  }
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  margin: 27px 0;
+}
+
+@media only screen and (max-width: 320px) {
+  .match {
+    .players {
+      gap: 2px;
+    }
+  }
+  .selection {
+    .selection-time {
+      .option {
+        min-width: 100px;
+        padding: 5px;
+      }
+    }
+  }
+}
